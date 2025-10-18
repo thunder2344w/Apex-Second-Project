@@ -1,0 +1,144 @@
+/* --- Global Reset and Typography --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* --- FLEXBOX: Header/Navbar Layout (Objective 3) --- */
+.navbar {
+    display: flex; /* Flexbox activated */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #347c46;
+    padding: 15px 25px;
+    color: white;
+}
+
+.logo { font-size: 1.5em; font-weight: bold; }
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.navbar nav a:hover { color: #2ecc71; }
+
+
+/* --- CSS GRID: Main Content Layout (Objective 3) --- */
+.grid-container {
+    display: grid; /* Grid activated */
+    /* Two columns: 1 part for form, 1 part for to-do list */
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* --- Section Styling --- */
+section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #db9334;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* --- Contact Form Styling (Objective 1) --- */
+.form-group { margin-bottom: 15px; }
+label { display: block; margin-bottom: 5px; font-weight: bold; }
+
+input[type="text"], 
+input[type="email"], 
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+/* Validation Error Styling (Objective 2) */
+.error-message {
+    color: #e74c3c;
+    font-size: 0.85em;
+    min-height: 1em;
+}
+.invalid-field {
+    border: 2px solid #e74c3c !important;
+}
+
+/* --- To-Do List Styling (Objective 4) --- */
+#task-input-container {
+    display: flex; /* Flexbox for input and button */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+#taskInput { flex-grow: 1; }
+#taskList { list-style: none; padding: 0; }
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+}
+.remove-btn { 
+    background-color: #e74c3c; 
+    color: white; 
+    border: none; 
+    padding: 5px 10px; 
+    border-radius: 3px; 
+    cursor: pointer;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #34495e;
+    color: white;
+    margin-top: 20px;
+}
+
+button{
+    padding: 10px;
+    border-radius: 4px;
+    background-color: rgb(17, 209, 17);
+}
+
+fieldset, .address{
+    font-weight: 700;
+}
+
+
+/* --- MEDIA QUERIES: Responsiveness (Objective 3) --- */
+@media (max-width: 800px) {
+    /* Stack grid sections on smaller screens */
+    .grid-container {
+        grid-template-columns: 1fr; /* Changes to a single column layout */
+        padding: 15px;
+    }
+    
+    /* Center the Flexbox navigation stack */
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navbar nav {
+        display: flex;
+        justify-content: center;
+    }
+    .navbar nav a {
+        margin: 0 10px;
+    }
+}
